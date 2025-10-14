@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search book</title>
+</head>
+<body>
+    <form th:method="POST" th:action="@{/books/find}">
+        <label for="tittle">Find the book</label>
+        <input type="text" name="str" id="tittle" th:value="${searchQuery}">
+
+        <input type="submit" value="Find!"/>
+
+
+    </form>
+
+<!--    <p th:if="${book != null}" th:text="book.getTittle()-->
+<!--     + ',' + book.getAuthor() + ', ' + book.getYearOfProduction()"></p>-->
+<!--    <br/>-->
+<!--    <p th:if="${person != null}" th:text="person.getFullName()-->
+<!--    + ',' + person.getYearOfBirth() + ' has the book'"></p>-->
+
+
+    <div th:if="${book != null}">
+        <h3>Book:</h3>
+        <p>
+            <strong>Tittle:</strong> <span th:text="${book.tittle}"></span><br>
+            <strong>Author:</strong> <span th:text="${book.author}"></span><br>
+            <strong>Year of production:</strong> <span th:text="${book.yearOfProduction}"></span>
+        </p>
+
+        <div th:if="${person != null}">
+        <h3>Reader:</h3>
+        <p>
+            <strong>Full Name:</strong> <span th:text="${person.fullName}"></span><br>
+            <strong>Year of birth:</strong> <span th:text="${person.yearOfBirth}"></span><br>
+        </p>
+        </div>
+
+        <div th:if="${person == null}">
+            <h3>Reader:</h3>
+            <p>
+                Book is free
+            </p>
+        </div>
+    </div>
+
+    <div th:if="${message != null}">
+        <p style="color:red" th:text="${message}"></p>
+    </div>
+
+
+
+</body>
+</html>
