@@ -7,11 +7,11 @@
 <body>
 
 <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
-    <label for="name">Enter full name</label>
+    <label for="name">Enter full name:</label>
     <input type="text" th:field="*{fullName}" id="name"/>
     <div style="color:red" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">Name Error</div>
     <br/>
-    <label for="date_of_birth">Enter year of birth </label>
+    <label for="date_of_birth">Enter year of birth:</label>
     <input type="text" th:field="*{yearOfBirth}" id="date_of_birth"/>
     <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Name Error</div>
     <br/>

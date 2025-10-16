@@ -7,16 +7,16 @@
 <body>
 
 <form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
-    <label for="tittle">Enter tittle</label>
+    <label for="tittle">Enter tittle:</label>
     <input type="text" th:field="*{tittle}" id="tittle"/>
     <div style="color:red" th:if="${#fields.hasErrors('tittle')}" th:errors="*{tittle}">Name Error</div>
     <br/>
     <br/>
-    <label for="author">Enter author </label>
+    <label for="author">Enter author:</label>
     <input type="text" th:field="*{author}" id="author"/>
     <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Name Error</div>
     <br/>
-    <label for="year">Enter year of production </label>
+    <label for="year">Enter year of production:</label>
     <input type="text" th:field="*{yearOfProduction}" id="year"/>
     <div style="color:red" th:if="${#fields.hasErrors('yearOfProduction')}" th:errors="*{yearOfProduction}">Name Error</div>
     <br/>

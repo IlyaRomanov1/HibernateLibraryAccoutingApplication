@@ -106,23 +106,6 @@ public class BooksController {
         return "books/search";
     }
 
-//    @PostMapping("/find")
-//    public String find(@RequestParam("str") String str, Model model){
-//        Book book = bookDAO.getBook(str);
-////        model.addAttribute("book", book);
-////        model.addAttribute("person", book.getReader());
-////        return "redirect:/books/search";
-//
-//        if (book != null) {
-//            model.addAttribute("book", book);
-//            model.addAttribute("person", book.getReader());
-//            return "books/search"; // Остаемся на той же странице
-//        } else {
-//            model.addAttribute("message", "Книга не найдена");
-//            return "books/search";
-//        }
-//    }
-//}
 
 @PostMapping("/find")
 public String find(@RequestParam("str") String str, Model model) {
